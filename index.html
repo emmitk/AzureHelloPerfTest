@@ -45,7 +45,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script>
-      alert("hello");
 /**
  * Returns a hash code for a string.
  * (Compatible to Java's String.hashCode())
@@ -67,8 +66,13 @@ hashCode = function(s) {
       h = (h << 5) - h + s.charCodeAt(i++) | 0;
   return h;
 };
-      var tmp = hashCode("This is some text");
-      alert(tmp);
+      var cnt = Math.floor(Math.random() * 50) + 50;
+      var str = "ABCD";
+      for (int i=0; i < cnt; i++)
+      {
+        str += str; //increase string
+      }  
+      var tmp = hashCode(str); //abitrary hash to take up cpu and ignore output
     </script>
     <script src="js/bootstrap.min.js"></script>
   </body>
