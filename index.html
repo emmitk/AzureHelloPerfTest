@@ -39,45 +39,33 @@
       </div>
     </div>
     <div name="count" id="count">Count</div>
-    
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script>
-/**
- * Returns a hash code for a string.
- * (Compatible to Java's String.hashCode())
- *
- * The hash code for a string object is computed as
- *     s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
- * using number arithmetic, where s[i] is the i th character
- * of the given string, n is the length of the string,
- * and ^ indicates exponentiation.
- * (The hash value of the empty string is zero.)
- *
- * @param {string} s a string
- * @return {number} a hash code value for the given string.
- */
-hashCode = function(s) {
+		//simple hash
+			var hashCode = function(s) {
   var h = 0, l = s.length, i = 0;
   if ( l > 0 )
     while (i < l)
       h = (h << 5) - h + s.charCodeAt(i++) | 0;
   return h;
 };
-      document.write('Testme<br/>');
+
       document.getElementById("count").innerHTML = "Count=";
-      var cnt = Math.floor(Math.random() * 100) + 150;
+      var cnt = Math.floor(Math.random() * 5000) + 1000;
       var str = "ABCD";
-      for (int i=0; i < cnt; i++)
+      for (i=0; i < cnt; i++)
       {
-        str += str; //increase string
-      }  
-      var tmp = hashCode(str); //abitrary hash to take up cpu and ignore output
-      document.getElementById("count").innerHTML = "Count=" + cnt.toString();
+        str = str + "ABCD"; //increase string
+        var tmp = hashCode(str); //abitrary hash to take up cpu and ignore output
+      } 
+			
+      document.getElementById("count").innerHTML = "Count=" + cnt + "|" + tmp;
     </script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
+
