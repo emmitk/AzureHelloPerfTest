@@ -38,6 +38,7 @@
           </div>
       </div>
     </div>
+    <div name="count" id="count"></div>
     
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -66,13 +67,14 @@ hashCode = function(s) {
       h = (h << 5) - h + s.charCodeAt(i++) | 0;
   return h;
 };
-      var cnt = Math.floor(Math.random() * 50) + 50;
+      var cnt = Math.floor(Math.random() * 100) + 150;
       var str = "ABCD";
       for (int i=0; i < cnt; i++)
       {
         str += str; //increase string
       }  
       var tmp = hashCode(str); //abitrary hash to take up cpu and ignore output
+      document.getElementById("count").innerHTML = "Count=" + cnt;
     </script>
     <script src="js/bootstrap.min.js"></script>
   </body>
